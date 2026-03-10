@@ -58,6 +58,37 @@ public:
     }
 };
 
+class Complex {
+    float real;
+    float im;
+public:
+    Complex(float a, float b){
+        real = a; im = b;
+    }
+    Complex(float a){
+        real = a;
+    }
+
+    void set_real(float a){
+        real = a;
+    }
+    void set_im(float b){
+        im = b;
+    }
+    Complex add(const Complex b){
+        Complex c(real + b.real,im + b.im);
+        return c;
+    }
+
+    void print(){
+        if(im<0){
+            std::cout << real<<im<<"i\n";
+        }
+        else std::cout <<real<<"+"<<im<<"i\n";
+    }
+
+}
+
 int main(){
     Student student("Some","Student",192467);
     for(float f=2.0;f<=5.0;f+=0.5){
